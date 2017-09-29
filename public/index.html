@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Article Scraper with Mongo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-top: 5px;
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    #showsaved {
+      margin-left:  5px;
+      margin-top: 10px;
+    }
+
+    #scrapenew {
+      margin-left:  10px;
+      margin-top: 10px;
+    }
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
+
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; 
+    }
+  }
+  </style>
+</head>
+<body>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Save a note</h4>
+      </div>
+      <div class="modal-body">
+
+        <p id="rec-id"></p>
+        <div class="form-group">
+              <label for="comment">Comment:</label>
+              <textarea class="form-control" rows="5" id="comment"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary NoteSave" data-dismiss="modal">Save</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Article Scraper</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        
+        <li><button type="button" id="showsaved" class="btn btn-warning">Saved Articles</button></li>
+        <li><button type="button" id="scrapenew" class="btn btn-success">Scrape New Articles</button></li>
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+
+<!-- <div class="col-lg-12">
+      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:90%" alt="Image">
+      
+    </div> -->
+  
+<div class="container text-center">    
+  <!-- <h3>Scraped Articles</h3><br> -->
+  <div class="row">
+      
+    <div class="col-lg-12" id="articles">
+            <h3>Time to start scraping, hit the button in the navigation bar.</h3>
+    </div>
+  </div>
+</div><br>
+<div id="wrapper">
+      <h1></h1>
+      <h2><i></i></h2>
+      <div id="articles"></div>
+      <div id="notes"></div>
+    </div>
+<footer class="container-fluid text-center">
+  <p></p>
+</footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
+
