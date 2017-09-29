@@ -1,13 +1,3 @@
-/* Scrape and Display
- * (If you can do this, you should be set for your hw)
- * ================================================== */
-
-// STUDENTS:
-// Please complete the routes with TODOs inside.
-// Your specific instructions lie there
-
-// Good luck!
-
 // Dependencies
 var express = require("express");
 var bodyParser = require("body-parser");
@@ -26,7 +16,7 @@ mongoose.Promise = Promise;
 // Initialize Express
 var app = express();
 
-// Use morgan and body parser with our app
+// Use morgan and body parser
 app.use(logger("dev"));
 app.use(bodyParser.urlencoded({
   extended: false
@@ -36,8 +26,9 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 // Database configuration with mongoose
-//week18day3mongoose
-mongoose.connect("mongodb://localhost/newsscrape");
+//mongoose.connect("mongodb://localhost/newsscrape");
+mongoose.connect("mongodb://heroku_bmqkbv3k:la3qtma3eo2ejt4lt14ef6fk4s@ds155674.mlab.com:55674/heroku_bmqkbv3k");
+
 var db = mongoose.connection;
 
 // Show any mongoose errors
