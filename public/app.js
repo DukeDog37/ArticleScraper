@@ -103,6 +103,8 @@ $(".NoteSave").click(function(){
       // Empty the notes section
       alert("Note save successful");
       
+
+      
     });
 
 });
